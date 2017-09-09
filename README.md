@@ -1,1 +1,1 @@
-# Strike-Games
+# Repositório temporário da Strike-Games
