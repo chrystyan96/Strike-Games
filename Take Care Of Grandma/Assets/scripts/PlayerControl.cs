@@ -14,10 +14,13 @@ public class PlayerControl : MonoBehaviour {
 
 	private Collider2D myCollider;
 
+	private Animator myAnimator;
+
 	// Use this for initialization
 	void Start () {
 		myRigidbody = GetComponent<Rigidbody2D>();
 		myCollider = GetComponent<Collider2D>();
+		myAnimator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -31,5 +34,8 @@ public class PlayerControl : MonoBehaviour {
 				myRigidbody.velocity = new Vector2 (myRigidbody.velocity.x, jumpForce);
 			}
 		}
+
+		myAnimator.SetFloat ("Speed", myRigidbody.velocity.x);
+		myAnimator.SetBool ("Grounded", grounded);
 	}
 }
